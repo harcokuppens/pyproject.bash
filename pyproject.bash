@@ -28,7 +28,7 @@ USAGE: source project.bash setup [-l LOCKFILE] [-p PYTHONVERSION] [-f]
        source project.bash reactivate [-l LOCKFILE]
        source project.bash info|activate|clean
        
-Effortless and quickly setup of the exact same Python development project anywhere.
+Effortless and quickly setup the exact same Python development project anywhere.
 
 A wrapper script around Python's venv and pip-tools to EASE Python project maintenance. 
 Using a developer's lockfile, stored in your repository, it automates setting up 
