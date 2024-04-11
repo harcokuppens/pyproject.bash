@@ -1,5 +1,81 @@
 # pyproject.bash
-A wrapper script around python's venv and pip-tools to EASE python project maintenance. 
+A wrapper script around Python's venv and pip-tools to EASE Python project maintenance, by
+automate setting up the Python virtual environment with the EXACT same dependencies at 
+any location you want. (using a developer's lockfile)
+
+## Intro:
+
+### Setup project:
+
+Given a python project with a modern 'pyproject.toml' configuration we can easily setup
+the project for portable deployment:
+
+ 1) first add 'pyproject.bash' to your project
+
+         wget https://raw.githubusercontent.com/harcokuppens/pyproject.bash/main/pyproject.bash
+         git add pyproject.bash
+ 
+ 2) run setup:
+
+         source pyproject.bash setup
+
+    you now have an active python project: you have an active venv with all needed dependencies installed.
+ 
+ 3) store the generated lockfile.txt in your repository and push to remote
+
+         git add lockfile.txt
+         git push
+
+### Reactivate project:
+
+On a different developer machine you could now just clone your project's git repository, and then run:
+
+       source pyproject.bash reactivate
+
+Now a virtual environment with the same python version and the exact same dependencies is created
+using the lockfile in your repository. You have now the exact same developer installation as on 
+your other developer machine where you did the setup.
+  
+     
+### Project info:
+
+With the 'info' command you can easily get the status of your current project environment. Below
+is an example:
+
+        $ source pyproject.bash  info
+        
+        project venv: ACTIVE
+        project config:  pyproject.toml context.txt
+        
+        venv folder: yes
+        venv synced with LOCKFILE:  lockfile.mac.txt
+        venv PYTHON VERSION: 3.8
+        venv: activated
+        
+        python versions available on this system:
+        
+            python3.7
+            python3.7m
+            python3.8
+            python3.8-intel64
+            python3.9
+            python3.10
+            python3.10-intel64
+            python3.11
+            python3.12
+            python3.12-intel64
+        
+        lockfiles with corresponding python versions:
+        
+            LOCKFILE                                                    PYTHON VERSION
+            --------                                                    --------------
+            lockfile.linux.txt                                          3.8
+            lockfile.txt                                                3.9
+            lockfile.mac.txt                                            3.8
+
+
+
+## Usage details:
 
     $ source pyproject.bash
      
