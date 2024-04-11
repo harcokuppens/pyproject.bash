@@ -62,7 +62,7 @@ pip-sync tools. For more details about these tools see:
 
 The commands explained in more detail:
    
-   setup      : Setup project env from config files pyproject.toml and context.txt(optional).
+   setup      : Setup project from config files pyproject.toml and context.txt(optional).
    
         Creates a lockfile from these config files (using pip-compile), then reactivates
         the project (see next command). The setup command locks the dependencies of the
