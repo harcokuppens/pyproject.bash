@@ -1,7 +1,10 @@
 # pyproject.bash
-A wrapper script around Python's venv and pip-tools to EASE Python project maintenance, by
-automate setting up the Python virtual environment with the EXACT same dependencies at 
-any location you want. (using a developer's lockfile)
+
+Effortless and quickly setup of the exact same Python development project anywhere. 
+
+A wrapper script around Python's venv and pip-tools to EASE Python project maintenance. 
+Using a developer's lockfile, stored in your repository, it automates setting up the Python 
+virtual environment with the same python version and EXACT same dependencies at any location you want.
 
 ## Intro:
 
