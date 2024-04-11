@@ -1,6 +1,6 @@
 # pyproject.bash
 
-Effortless and quickly setup of the exact same Python development project anywhere. 
+Effortless and quickly setup the exact same Python development project anywhere. 
 
 A wrapper script around Python's venv and pip-tools to EASE Python project maintenance. 
 Using a developer's lockfile, stored in your repository, it automates setting up the Python 
