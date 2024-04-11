@@ -84,7 +84,7 @@ to be installed. If that is the case for your project then you could create a se
 
 If we have a lockfile for an platform, we then want to create a lockfile for another platform that deviates as little as possible. We can do this
 easily by using the constraints option of `pip-compile`.
-Using the constraints option of pip-compile we can  create a `lockfile.NEW.txt` for platform NEW from platform OLD by running the following command on the NEW platform:
+Using the constraints option of pip-compile we can  create a `lockfile.NEW.txt` for the NEW platform from the OLD platform's `lockfile.OLD.txt` by running the following command on the NEW platform:
 
          pip-compile  -c lockfile.OLD.txt   -o lockfile.NEW.txt   pyproject.toml context.txt 
 
