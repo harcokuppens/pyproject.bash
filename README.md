@@ -196,20 +196,32 @@ All dependencies that both platforms use have the same versions, because of the 
     If you only want to open a new bash shell for the project you can just use the 'activate'
     command.
         
+    About context projects and editable installs in context.txt:
+        
     Your project may have some related projects on which your project depends, or your
     project is a dependency off. We call them 'context' projects, because these are in the
-    context of your project. Often during development when making changes to your project you
-    may need related changes in the context projects. Using editable installs python allows
-    us to also install these context projects editable in your project. Because the editable
-    installs are only needed during development we do not want to configure them in the
-    pyproject.toml config. The latter file is used for building a production ready release
-    package. Therefore we use a separate configfile 'context.txt' in which we configure the
-    editable installs. The convention is to git clone a context project X into the context/X/
-    subdir of your project, and the add a line '-e context/X' to the context.txt config file.
-    Git cloning the project must be done manually, but after that the wrapper script can do
-    the editable install automatically for you. The editable install also is added to the
-    projects lockfile, so if we later need to reactivate the project it will automatically
-    use the editable install instead of a normal install.
+    context of your project. Often during development when making changes to your project
+    you may need related changes in the context projects. Using editable installs python
+    allows us to also install these context projects editable in your project. Because the
+    editable installs are only needed during development we do not want to configure them
+    in the pyproject.toml config. The latter file is used for building a production ready
+    release package with 'python -m build'. Therefore we use a separate configfile
+    'context.txt' in which we configure the editable installs purely used for development.
+    
+    The convention is to git clone a context project X into the context/X/ subdir of
+    your project, and the add a line '-e context/X' to the context.txt config file.
+    Also the main project is added with a line '-e .' to the context.txt config file.
+    Editable install of the main project is required if your project uses the
+    src-layout, because otherwise python files are in the src/ subdirectory won't be
+    made available on the PYTHONPATH automatically. The editable install of your main
+    project solves that!
+    
+    After git cloning the main project, then git cloning of the context projects into the
+    context folder must be done manually or by a custom script.  
+    Then the wrapper script can do all dependencies installs, including the editable
+    installs automatically for you. The editable installs are also added to the
+    project's lockfile, so if we later need to reactivate the project the editable installs
+    are also done again.
 
     The context.txt and the lockfile are only used during development. 
     For production we only need pyproject.toml. 
