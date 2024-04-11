@@ -74,6 +74,18 @@ is an example:
             lockfile.mac.txt                                            3.8
 
 
+## Platform specific lockfiles
+
+Python tries to give platform independent API. However, to provide this API on each specific platform it may require some different packages 
+to be installed. If that is the case for your project then you could create a separate lockfile  per platform. Eg. a separate lockfile for linux,mac and windows.
+
+If we have a lockfile for an platform, we then want to create a lockfile for another platform that deviates as little as possible. We can do this
+easily by using the constraints option of `pip-compile`.
+Using the constraints option of pip-compile we can  create a `lockfile.NEW.txt` for platform NEW from platform OLD using the command:
+
+         pip-compile  -c lockfile.OLD.txt   -o lockfile.NEW.txt   pyproject.toml context.txt 
+
+All dependencies that both platforms use have the same versions, because of the constraint. Only for dependencies specific to the NEW platform the pip-compile will add new entries. Dependencies specific for the OLD platform are not added, because they are not needed for the new platform. Their entries in the constraint file are just ignored.
 
 ## Usage details:
 
