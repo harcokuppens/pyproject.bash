@@ -19,7 +19,7 @@ the project for portable deployment:
 
          source pyproject.bash setup
 
-    you now have an active python project: you have an active venv with all needed dependencies installed.
+    you now have an active python project: you have an **active venv** with **all needed dependencies installed**.
  
  3) store the generated lockfile.txt in your repository and push to remote
 
@@ -32,8 +32,8 @@ On a different developer machine you could now just clone your project's git rep
 
        source pyproject.bash reactivate
 
-Now a virtual environment with the same python version and the exact same dependencies is created
-using the lockfile in your repository. You have now the exact same developer installation as on 
+Now a **virtual environment** with the **same python version** and the **exact same dependencies** is created
+using the **lockfile in your repository**. You have now the exact same developer installation as on 
 your other developer machine where you did the setup.
   
      
