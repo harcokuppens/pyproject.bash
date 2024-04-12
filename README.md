@@ -39,7 +39,7 @@ Now a **virtual environment** with the **same python version** and the **exact s
 using the **lockfile in your repository**. You have now the exact same developer installation as on 
 your other developer machine where you did the setup.
 
-Look at an example project using pyproject.bash at:  https://github.com/ev3dev-python-tools/thonny-ev3dev
+Look at an example project using pyproject.bash at: https://github.com/ev3dev-python-tools/thonny-ev3dev/blob/master/Developing.md#automated-setup
   
      
 ### Project info:
