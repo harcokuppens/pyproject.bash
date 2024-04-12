@@ -92,6 +92,22 @@ Using the constraints option of pip-compile we can  create a `lockfile.NEW.txt` 
 
 All dependencies that both platforms use have the same versions, because of the constraint. Only for dependencies specific to the NEW platform the pip-compile will add new entries. Dependencies specific for the OLD platform are not added, because they are not needed for the new platform. Their entries in the constraint file are just ignored.
 
+## IDE support
+
+### Visual Studio Code
+
+Vscode automatically recognizes the .venv folder in your main project and uses that python virtual environment.
+
+To make vscode  see the git repositories of the context projects you need to add each folder of a context project to the workspace using the menu "File->Add Folder to Workspace...".
+Then save the workspace as a `.code-workspace` file in your main project so that you can easily open it later again. Have a workspace setup also allows you to easily browse all projects in the "Explore" side menu  because they became root folders in the workspace view there.
+
+### IntelliJ IDEA/Pycharm
+
+The IDE doesn't always automatically recognize the  .venv folder in your main project, however via the Settings you can easily choose to use the python in that folder.
+
+The IDE also doesn't automatically see the git repositories for your context projects, however at 
+"Settings | Version Control | Directory Mappings" you can easily add them. 
+
 ## Internal documentation in pyproject.bash script:
 
     $ source pyproject.bash
