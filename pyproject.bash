@@ -33,7 +33,8 @@ DESCRIPTION
     environment. Then at another location 'git clone' the project, and execute the
     'reactivate' command. The 'reactive' command then uses the info in the lockfile to
     reactive the project exactly the same! Using the 'info' command we can always
-    easily view the current project status. And if you only want to open the project
+    easily view the current project status. With the 'build' command we can build
+    a redistributable package(wheel). And if you only want to open the project
     in a new bash shell you can just use the 'activate' command to just activate its
     sandboxed environment in the new shell.
 
@@ -87,7 +88,7 @@ COMMANDS
     in a new bash shell. 
 
   build
-    Build distributable package of project in dist/ folder.  
+    Build distributable package(wheel) of project in dist/ folder.  
             
   clean
     Cleanup project virtual environment.
