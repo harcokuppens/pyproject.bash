@@ -274,7 +274,8 @@ REQ_PYTHONVERSION=""
 CMD="$1"
 shift
 
-while [[ -n "$1"  ]] do
+while [[ -n "$1"  ]] 
+do
     arg="$1"
     case $arg in 
     	"-l" ) 
