@@ -1,4 +1,4 @@
-# pyproject.bash
+# Python project management with 'pyproject.bash'
 
 Effortless and quickly setup the exact same Python development project anywhere. 
 
